@@ -1,7 +1,7 @@
 const { InvitationRepository } = require('../repository/index')
 class InvitationService{
     constructor(){
-        this.invitationService = new UserRepository()
+        this.invitationService = new InvitationRepository()
     }
     async createInvitation(data){
         try {

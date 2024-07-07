@@ -9,7 +9,7 @@ const settingAndStartingServer = async () => {
     app.use(bodyParser.urlencoded({extended:true}));
     app.use(bodyParser.json());
     app.use(cors());
-    app.use('/api', apiRoutes);
+    app.use('/api', apiRoutes)
     app.listen(PORT, () => {
         console.log(`Server is running as PORT ${PORT}`);
     })

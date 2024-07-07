@@ -16,7 +16,7 @@ class InvitationRepository{
         try {
             const user = await prisma.invitation.findUnique({
                 where:{
-                    invId
+                    invitationId: parseInt(invId)
                 }
             });
             return user;
@@ -30,7 +30,7 @@ class InvitationRepository{
         try {
             const user = await prisma.invitation.findMany({
                 where:{
-                    userId
+                    userId: parseInt(userId)
                 }
             });
             return user;

@@ -1,5 +1,6 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const NotFound = require('../errors/notfound.error')
 
 class InvitationRepository{
     async createInvitation(data){
@@ -16,7 +17,7 @@ class InvitationRepository{
         try {
             const user = await prisma.invitation.findUnique({
                 where:{
-                    invitationId: parseInt(invId)
+                    invitationId: invId
                 }
             });
             return user;
@@ -30,7 +31,7 @@ class InvitationRepository{
         try {
             const user = await prisma.invitation.findMany({
                 where:{
-                    userId: parseInt(userId)
+                    userId: userId
                 }
             });
             return user;

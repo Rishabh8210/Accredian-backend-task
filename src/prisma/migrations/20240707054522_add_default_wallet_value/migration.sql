@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `user` MODIFY `wallet` DOUBLE NOT NULL DEFAULT 0.0;

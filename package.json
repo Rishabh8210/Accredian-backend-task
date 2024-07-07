@@ -4,7 +4,9 @@
   "description": "Backend for refer and earn features",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon src/index.js"
+    "start": "npx nodemon src/index.js",
+    "prisma:generate": "npx prisma generate",
+    "prestart": "npm run prisma:generate"
   },
   "author": "Rishabh",
   "license": "ISC",

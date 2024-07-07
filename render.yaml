@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: my-app
+    env: node
+    buildCommand: |
+      npm install
+      npx prisma generate
+      npx prisma migrate deploy
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        value: "mysql://root:rishabh123@localhost:3306/accredian"

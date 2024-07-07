@@ -12,6 +12,16 @@ class UserService{
             throw {error};
         }
     }
+
+    async deleteUser(data){
+        try {
+            const user = await this.userRepository.deleteUser(data);
+            return user;
+        } catch (error) {
+            console.log("Something went wrong in service layer");
+            throw {error};
+        }
+    }
 }
 
 module.exports = UserService;
